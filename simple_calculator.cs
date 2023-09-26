@@ -11,94 +11,56 @@ namespace Calculator
     {
         static void Main(string[] args)
         {
-            int first_num;
-            int second_num;
-            char operation;
-
-            Console.WriteLine("Выберите операцию (+,-,*,/,^,%): ");
-            operation = char.Parse(Console.ReadLine());
-            if (operation == '+')
+  
             {
-                Console.WriteLine("Введите первое число: ");
-                first_num = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Р’РІРµРґРёС‚Рµ РїРµСЂРІРѕРµ С‡РёСЃР»Рѕ:");
+                double num1 = Convert.ToDouble(Console.ReadLine());
 
-                Console.WriteLine("Введите второе число: ");
-                second_num = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Р’РІРµРґРёС‚Рµ РІС‚РѕСЂРѕРµ С‡РёСЃР»Рѕ:");
+                double num2 = Convert.ToDouble(Console.ReadLine());
 
-                Console.WriteLine("Результат:" + (first_num + second_num));
-                Console.ReadKey();
+                Console.WriteLine("Р’С‹Р±РµСЂРёС‚Рµ РѕРїРµСЂР°С†РёСЋ (+, -, *, /,^,%):");
+                char operation = Convert.ToChar(Console.ReadLine());
 
+                double result = 0;
+
+                switch (operation)
+                {
+                    case '+':
+                        result = num1 + num2;
+                        break;
+                    case '-':
+                        result = num1 - num2;
+                        break;
+                    case '*':
+                        result = num1 * num2;
+                        break;
+                    case '/':
+                        if (num2 != 0)
+                        {
+                            result = num1 / num2;
+                        }
+                        else
+                        {
+                            Console.WriteLine("РґРµР»РµРЅРёРµ РЅР° РЅРѕР»СЊ");
+                            return;
+                        }
+                        break;
+                    case '^':
+                        result = num1 * num1;
+                        break;
+                    case '%':
+                        result = num1 % num1;
+                        break;
+
+                    default:
+                        Console.WriteLine("РЅРµРІРµСЂРЅР°СЏ РѕРїРµСЂР°С†РёСЏ");
+                        return;
+                }
+
+                Console.WriteLine("Р РµР·СѓР»СЊС‚Р°С‚: " + result);
             }
-
-            else if (operation == '-')
-            {
-                Console.WriteLine("Введите первое число: ");
-                first_num = Convert.ToInt32(Console.ReadLine());
-
-                Console.WriteLine("Введите второе число: ");
-                second_num = Convert.ToInt32(Console.ReadLine());
-
-                Console.WriteLine("Результат: " + (first_num - second_num));
-                Console.ReadKey();
-
-            }
-
-            else if (operation == '*')
-            {
-                Console.WriteLine("Введите первое число: ");
-                first_num = Convert.ToInt32(Console.ReadLine());
-
-                Console.WriteLine("Введите второе число: ");
-                second_num = Convert.ToInt32(Console.ReadLine());
-
-                Console.WriteLine("Результат: " + (first_num * second_num));
-                Console.ReadKey();
-
-            }
-
-            else if (operation == '/')
-            {
-                Console.WriteLine("Введите первое число: ");
-                first_num = Convert.ToInt32(Console.ReadLine());
-
-                Console.WriteLine("Введите второе число: ");
-                second_num = Convert.ToInt32(Console.ReadLine());
-
-                Console.WriteLine("Результат: " + (first_num / second_num));
-                Console.ReadKey();
-            }
-
-            else if (operation == "^")
-            {
-                int num1ques;
-               
-                Console.WriteLine("Введите число, возводимое в квадрат: ");
-                num1ques = byte.Parse(Console.ReadLine());
-
-                Console.WriteLine("Результат: " + (num1ques * num1ques));
-                Console.ReadLine();
-
-                Console.ReadKey();
-
-            }
-
-            else if (operation = '%')
-            {
-
-                int num2ques;
-
-                Console.WriteLine("Введите первое число: ");
-                num2ques = Convert.ToInt32(Console.ReadLine());
-
-
-
-                Console.WriteLine("Результат: " + (num2ques % num2ques));
-                Console.ReadLine();
-
-            }
-
-
         }
- 
     }
 }
+
